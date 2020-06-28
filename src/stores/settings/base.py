@@ -1,11 +1,10 @@
 
 import os
+from decouple import config
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-SECRET_KEY = 'm#28qx-exar5bvtd5v8fi73)xtxp!j^dz8e_sr3ylbelfb*!@2'
-
-DEBUG = True
+SECRET_KEY = config('SECRET_KEY')
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1', '192.168.0.186']
 
@@ -117,5 +116,5 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
